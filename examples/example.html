@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+</head>
+<body>
+	<!-- <style>
+		body {
+		  height: 200px;
+		  background: beige;
+		}
+		.dot {
+		  height: 8px; width: 8px;
+		  border-radius: 4px; /* rounds corners */
+		  background: blue;
+		  position: absolute;
+		}
+	  </style>
+	  <script>
+		window.addEventListener("click", function(event) {
+		  const dot = document.createElement("div");
+		  dot.className = "dot";
+		  dot.style.left = (event.pageX - 4) + "px";
+		  dot.style.top = (event.pageY - 4) + "px";
+		  document.body.appendChild(dot);
+		});
+	  </script> -->
+	  <p>Drag the bar to change its width:</p>
+	<div style="background: orange; width: 60px; height: 20px">
+	</div>
+	<script>
+	let lastX; // Tracks the last observed mouse X position
+	const rect = document.querySelector("div");
+	rect.addEventListener("mousedown", function(event) {
+		if (event.which == 1) {
+		lastX = event.pageX;
+		window.addEventListener("mousemove", moved);
+		event.preventDefault(); // Prevent selection
+		}
+	});
+
+	function buttonPressed(event) {
+		if (event.buttons == null)
+		return event.which != 0;
+		else
+		return event.buttons != 0;
+	}
+	function moved(event) {
+		if (!buttonPressed(event)) {
+		window.removeEventListener("mousemove", moved);
+		} else {
+		const dist = event.pageX - lastX;
+		const newWidth = Math.max(10, rect.offsetWidth + dist);
+		rect.style.width = newWidth + "px";
+		lastX = event.pageX;
+		}
+	}
+	</script>
+</body>
+</html>
