@@ -13,10 +13,10 @@ const Profile = () => {
 			<textarea name="" id="" cols="10" rows="2"></textarea>
 			<button>addPost</button>
 			<div>
-					my post
-				<div>
-					new post
-				</div>
+				my post
+			<div>
+				new post
+			</div>
 			</div>
 			<MyPost/>
 		</div>
