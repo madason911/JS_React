@@ -1,13 +1,18 @@
-import s from './Navbar.module.css'
+import s from './Navbar.module.css';
+import {
+	Link
+} from "react-router-dom";
 
 const Navbar = () => {
 	return (
 		<nav className={s.nav}>
-			<div>
-				<a href='./License'>Лицензии</a>
+			<div className={s.item}>
+				{/* <a href='./License'>Лицензии</a> */}
+				<Link to='./License' activeClassName={s.activeLink}>Лицензии</Link>
 			</div>
-			<div>
-				<a href='./Profile'>Режим работы</a>
+			<div className={s.item}>
+				{/* <a href='./Profile'>Режим работы</a> */}
+				<Link to='./Profile' activeClassName={s.activeLink}>Режим работы</Link>
 			</div>
 			<div>
 				<a>Вакансии</a>
