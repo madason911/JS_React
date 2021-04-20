@@ -4,10 +4,10 @@ const Navbar = () => {
 	return (
 		<nav className={s.nav}>
 			<div>
-				<a>Лицензии</a>
+				<a href='./License'>Лицензии</a>
 			</div>
 			<div>
-				<a>Режим работы</a>
+				<a href='./Profile'>Режим работы</a>
 			</div>
 			<div>
 				<a>Вакансии</a>
