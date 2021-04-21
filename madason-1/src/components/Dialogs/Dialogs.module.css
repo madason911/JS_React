@@ -3,8 +3,13 @@
 	grid-template-columns: 2fr 10fr;
 }
 
-.dialog {
+.dialog{
 	padding: 5px;
+}
+
+.dialog a{
+	text-decoration: none;
+	color: white;
 }
 
 .messages {

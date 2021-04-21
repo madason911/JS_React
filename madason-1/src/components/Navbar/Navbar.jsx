@@ -7,12 +7,10 @@ const Navbar = () => {
 	return (
 		<nav className={s.nav}>
 			<div className={s.item}>
-				{/* <a href='./License'>Лицензии</a> */}
-				<Link to='./Dialogs'>Messages</Link>
+				<Link to='/Dialogs'>Messages</Link>
 			</div>
 			<div className={s.item}>
-				{/* <a href='./Profile'>Режим работы</a> */}
-				<Link to='./Profile'>Profile</Link>
+				<Link to='/Profile'>Profile</Link>
 			</div>
 			<div>
 				<a>Вакансии</a>
