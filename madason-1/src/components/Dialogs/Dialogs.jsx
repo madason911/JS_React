@@ -3,6 +3,8 @@ import {
 	Link
 } from "react-router-dom";
 
+
+
 const DialogItem = (props) => {
 	let path = "/Dialogs/" + props.id;
 
@@ -22,18 +24,31 @@ const MessageItem = (props) => {
 }
 
 const Dialogs = () => {
+
+	const dialogs = [
+		{id:1, name: "Ivan"},
+		{id:2, name: "Maga"},
+		{id:3, name: "Sasha"},
+		{id:4, name: "Masha"},
+		{id:5, name: "Dasha"}
+	]
+	
+	const messages = [
+		{id:1, message:"Hello!"},
+		{id:2, message:"How are you?"},
+		{id:3, message:"How old are you?"},
+	]
+
+	const dialogsItems = dialogs.map(d => <DialogItem name={d.name} id={d.id} />);
+	const messagesItems = messages.map(m => <MessageItem message={m.message} />);
+
 	return (
 		<div className={s.dialogs}>
 			<div className="dialogItems">
-				<DialogItem name='Ivan' id='1' />
-				<DialogItem name='Maga' id='2' />
-				<DialogItem name='Masha' id='3' />
-				<DialogItem name='Sasha' id='4' />
+				{dialogsItems}
 			</div>
 			<div className={s.messages}>
-				<MessageItem message='hi' />
-				<MessageItem message='how are you' />
-				<MessageItem message='how old are you' />
+				{messagesItems}
 			</div>
 		</div>
 	)
