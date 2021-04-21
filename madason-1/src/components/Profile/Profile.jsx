@@ -1,7 +1,19 @@
 import MyPost from './MyPost/MyPost'
+import Post from './MyPost/Post/Post';
 import s from './Profile.module.css'
 
 const Profile = () => {
+
+	const posts = [
+		{id:1, post:"Hello my dear friend!"},
+		{id:2, post:"Hello my dear friends!"},
+		{id:3, post:"Hello my dear friend!"},
+		{id:4, post:"Hello my dear friends!"},
+		{id:5, post:"Hello my dear teacher!"}
+	]
+
+	const postItems = posts.map(p => <Post review={p.post}/>);
+
 	return (
 		<div className={s.content}>
 			<div>
@@ -18,7 +30,7 @@ const Profile = () => {
 					new post
 				</div>
 			</div>
-			<MyPost/>
+			<MyPost postEl={postItems}/>
 		</div>
 	)
 }
