@@ -3,13 +3,14 @@ import './App.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
-import License from './components/License/License';
+import License from './components/Dialogs/Dialogs';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link
 } from "react-router-dom";
+import Dialogs from './components/Dialogs/Dialogs';
 
 const App = () => {
   return (
@@ -17,8 +18,10 @@ const App = () => {
       <div className='app-wrapper'>
         <Header/>
         <Navbar/>
-        <Route path='/Profile' component={Profile}/>
-        <Route path='/License' component={License}/>
+        <div className='app-wrapper-content'>
+          <Route path='/Profile' component={Profile}/>
+          <Route path='/Dialogs' component={Dialogs}/>
+        </div>
       </div>
     </Router>
   );

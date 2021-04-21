@@ -8,11 +8,11 @@ const Navbar = () => {
 		<nav className={s.nav}>
 			<div className={s.item}>
 				{/* <a href='./License'>Лицензии</a> */}
-				<Link to='./License' activeClassName={s.activeLink}>Лицензии</Link>
+				<Link to='./Dialogs'>Messages</Link>
 			</div>
 			<div className={s.item}>
 				{/* <a href='./Profile'>Режим работы</a> */}
-				<Link to='./Profile' activeClassName={s.activeLink}>Режим работы</Link>
+				<Link to='./Profile'>Profile</Link>
 			</div>
 			<div>
 				<a>Вакансии</a>
