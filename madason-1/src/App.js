@@ -3,7 +3,6 @@ import './App.css';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
-import License from './components/Dialogs/Dialogs';
 import {
   BrowserRouter as Router,
   Switch,
@@ -19,8 +18,8 @@ const App = (props) => {
         <Header/>
         <Navbar/>
         <div className='app-wrapper-content'>
-          <Route path='/Profile' render={ () => <Profile posts={props.posts}/>}/>
-          <Route path='/Dialogs' render={ () => <Dialogs messages={props.messages} dialogs={props.dialogs}/>}/>
+          <Route path='/Profile' render={ () => <Profile posts={props.state.profilePage.posts}/>}/>
+          <Route path='/Dialogs' render={ () => <Dialogs messages={props.state.dialogsPage.messages} dialogs={props.state.dialogsPage.dialogs}/>}/>
         </div>
       </div>
     </Router>
