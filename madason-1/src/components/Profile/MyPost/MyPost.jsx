@@ -10,11 +10,11 @@ const MyPost = (props) => {
 	// 	{id:5, post:"Hello my dear teacher!"}
 	// ]
 
-	// const postItems = posts.map(p => <Post review={p.post}/>);
-
+	const postItems = props.posts.map(p => <Post review={p.post}/>);
+	// debugger;
 	return (
 		<div>
-			{props.postEl}
+			{postItems}
 		</div>
 	)
 }

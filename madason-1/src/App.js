@@ -12,15 +12,15 @@ import {
 } from "react-router-dom";
 import Dialogs from './components/Dialogs/Dialogs';
 
-const App = () => {
+const App = (props) => {
   return (
     <Router>
       <div className='app-wrapper'>
         <Header/>
         <Navbar/>
         <div className='app-wrapper-content'>
-          <Route path='/Profile' component={Profile}/>
-          <Route path='/Dialogs' component={Dialogs}/>
+          <Route path='/Profile' render={ () => <Profile posts={props.posts}/>}/>
+          <Route path='/Dialogs' render={ () => <Dialogs messages={props.messages} dialogs={props.dialogs}/>}/>
         </div>
       </div>
     </Router>
