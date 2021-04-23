@@ -22,4 +22,15 @@ let state = {
 		]}
 }
 
+export let addNewMessage = (newMessage) => {
+	// let message = newMessageElement.current.value;
+	let messageObj = {
+		id: 4,
+		message: newMessage
+	}
+	
+	state.dialogsPage.messages.push(messageObj)
+	// alert(message);
+}
+
 export default state;

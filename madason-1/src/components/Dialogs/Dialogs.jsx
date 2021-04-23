@@ -4,12 +4,6 @@ import {
 	Link
 } from "react-router-dom";
 
-let newMessageElement = React.createRef();
-
-let addNewMessage = () => {
-	let message = newMessageElement.current.value;
-	alert(message);
-}
 
 const DialogItem = (props) => {
 	let path = "/Dialogs/" + props.id;
@@ -31,14 +25,15 @@ const MessageItem = (props) => {
 	)
 }
 
-// const messageSender = () => {
-	
-// }
-
 const Dialogs = (props) => {
 
+	let newMessageElement = React.createRef();
 
-
+	let NewMessage = () => {
+		let message = newMessageElement.current.value;
+		props.addNewMessage(message);
+	}
+	debugger;
 	const dialogsItems = props.dialogs.map(d => <DialogItem name={d.name} id={d.id} />);
 	const messagesItems = props.messages.map(m => <MessageItem message={m.message} />);
 
@@ -55,7 +50,7 @@ const Dialogs = (props) => {
 					</textarea>
 				</div>
 				<div>
-					<button onClick={addNewMessage}>
+					<button onClick={NewMessage}>
 						sendMessage
 				</button>
 				</div>
