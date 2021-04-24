@@ -12,8 +12,9 @@ let state = {
 		messages: [
 			{id:1, message:"Hello!"},
 			{id:2, message:"How are you?"},
-			{id:3, message:"How old are you?"},
-		]},
+			{id:3, message:"How old are you?"}
+		],
+		newMessageText: "madason"},
 	profilePage: {
 		posts: [
 			{id:1, post:"Hello my dear friend!"},
@@ -25,14 +26,18 @@ let state = {
 }
 
 export let addNewMessage = (newMessage) => {
-	// let message = newMessageElement.current.value;
 	let messageObj = {
 		id: 4,
 		message: newMessage
 	}
 	state.dialogsPage.messages.push(messageObj)
 	reRender(state);
-	// alert(message);
+	state.dialogsPage.newMessageText = '';
+}
+
+export let updateNewMessageText = (newMessage) => {
+	state.dialogsPage.newMessageText = newMessage;
+	reRender(state);
 }
 
 export default state;
