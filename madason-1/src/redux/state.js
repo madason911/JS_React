@@ -1,5 +1,6 @@
-import {reRender} from '../render'
-
+let reRender = () => {
+	console.log("stateIsChanged");
+}
 let state = {
 	dialogsPage: {
 		dialogs: [
@@ -38,6 +39,10 @@ export let addNewMessage = (newMessage) => {
 export let updateNewMessageText = (newMessage) => {
 	state.dialogsPage.newMessageText = newMessage;
 	reRender(state);
+}
+
+export const subscribe = (observer) => {
+	reRender = observer;
 }
 
 export default state;
