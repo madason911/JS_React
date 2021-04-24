@@ -1,3 +1,5 @@
+import {reRender} from '../render'
+
 let state = {
 	dialogsPage: {
 		dialogs: [
@@ -28,8 +30,8 @@ export let addNewMessage = (newMessage) => {
 		id: 4,
 		message: newMessage
 	}
-	
 	state.dialogsPage.messages.push(messageObj)
+	reRender(state);
 	// alert(message);
 }
 

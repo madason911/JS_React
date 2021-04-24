@@ -33,7 +33,7 @@ const Dialogs = (props) => {
 		let message = newMessageElement.current.value;
 		props.addNewMessage(message);
 	}
-	debugger;
+	
 	const dialogsItems = props.dialogs.map(d => <DialogItem name={d.name} id={d.id} />);
 	const messagesItems = props.messages.map(m => <MessageItem message={m.message} />);
 
